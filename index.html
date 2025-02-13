@@ -1,140 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Question</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: pink;
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .question {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .button {
-            padding: 10px 20px;
-            font-size: 18px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .button.yes {
-            background-color: #ff4d4d;
-            color: white;
-        }
-        .button.no {
-            background-color: #e6e6e6;
-            position: relative;
-        }
-        .fireworks {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        .heart {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100px;
-            height: 100px;
-            background: url('heart.png') no-repeat center center;
-            background-size: contain;
-            transform: translate(-50%, -50%);
-            animation: heartbeat 1s infinite;
-        }
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% {
-                transform: translate(-50%, -50%) scale(1.2);
-            }
-        }
-        .garden {
-            position: absolute;
-            bottom: 50px;
-            width: 100%;
-            text-align: center;
-        }
-        .flower {
-            width: 100px;
-        }
-        .bee {
-            width: 50px;
-            position: absolute;
-            bottom: 100px;
-            animation: moveBee 5s linear infinite;
-        }
-        @keyframes moveBee {
-            0% { left: -50px; }
-            100% { left: 100%; }
-        }
-    </style>
+    <title>Valentine của Thịnh</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="question">
-            Vy có muốn làm Valentine của Thịnh không?
-        </div>
+        <h1 id="question">Vy có muốn làm Valentine của Thịnh không?</h1>
         <div class="buttons">
-            <button class="button yes" id="yesButton">Có</button>
-            <button class="button no" id="noButton">Không</button>
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+        <div id="heartContainer" class="hidden">
+            ❤️
+            <div class="garden">
+                🌸🌼🌺🌻🌷
+            </div>
+            <div class="bees">
+                🐝🐝
+            </div>
         </div>
     </div>
-
-    <script>
-        const noButton = document.getElementById('noButton');
-        const yesButton = document.getElementById('yesButton');
-        let yesButtonSize = 18;
-
-        noButton.addEventListener('mouseover', () => {
-            const x = Math.random() * (window.innerWidth - noButton.clientWidth);
-            const y = Math.random() * (window.innerHeight - noButton.clientHeight);
-            noButton.style.position = 'absolute';
-            noButton.style.left = `${x}px`;
-            noButton.style.top = `${y}px`;
-            yesButtonSize += 2;
-            yesButton.style.fontSize = `${yesButtonSize}px`;
-        });
-
-        yesButton.addEventListener('click', () => {
-            document.body.innerHTML = `
-                <div class="fireworks"></div>
-                <div class="heart"></div>
-                <div class="garden">
-                    <img src="flower.png" class="flower">
-                    <img src="bee.png" class="bee">
-                </div>
-            `;
-            document.body.style.backgroundColor = 'black';
-            initFireworks();
-        });
-
-        function initFireworks() {
-            // Add your fireworks animation code here
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
