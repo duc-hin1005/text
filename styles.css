@@ -1,0 +1,78 @@
+body {
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    position: relative;
+}
+
+#yesButton {
+    background-color: green;
+}
+
+#noButton {
+    background-color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+#heartContainer {
+    font-size: 5rem;
+    animation: heartbeat 1s infinite;
+    position: relative;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.garden {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.bees {
+    font-size: 2rem;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fly 3s infinite;
+}
+
+@keyframes fly {
+    0% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-20px); }
+    100% { transform: translateX(-50%) translateY(0); }
+}
